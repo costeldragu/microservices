@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface MovieInfoService {
 
     @GetMapping(value = "http://localhost:8081/movies/{movieId}", consumes = "application/json")
-    MovieDto getRating(@PathVariable("movieId") String movieId);
+    MovieDto getMovie(@PathVariable("movieId") String movieId);
 }
