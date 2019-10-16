@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 @RequestMapping("ratingdata")
 public class MovieRatingController {
     @GetMapping("/{movieId}")
     public Rating getRating(@PathVariable("movieId") String movieId) {
-        return Rating.builder().movieId(movieId).rating(5).build();
+        return Rating.builder().movieId(movieId).rating(new Random().nextInt()).build();
     }
 }
